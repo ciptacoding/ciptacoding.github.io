@@ -11,6 +11,10 @@ section {
     padding-top: 5rem;
 }
 
+#projects a {
+    text-decoration: none;
+}
+
 .nav-item:hover a {
     transform: scale(1.10);
     -webkit-transform: scale(1.10);
