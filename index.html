@@ -184,7 +184,7 @@
     </section>
     <!-- Project End -->
 
-    <!-- Contact Start -->
+    <!-- Contact form Start -->
     <section id="contact">
       <div class="container">
         <div class="row text-center mb-3">
@@ -194,6 +194,10 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-7">
+            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Terima Kasih!</strong> Pesan anda sudah terkirim.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <form name="portfolio-form-submit">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
@@ -207,7 +211,11 @@
                 <label for="pesan" class="form-label">Pesan</label>
                 <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
               </div>
-              <button type="submit" class="btn text-white" style="background-color: #0078aa">Kirim</button>
+              <button type="submit" class="btn btn-kirim text-white" style="background-color: #0078aa">Kirim</button>
+              <button class="btn btn-loading text-white d-none" type="button" style="background-color: #0078aa" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -220,7 +228,7 @@
         ></path>
       </svg>
     </section>
-    <!-- Contact End -->
+    <!-- Contact form End -->
 
     <!-- Sosmed Start -->
     <section id="sosmed">
@@ -301,16 +309,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- script untuk form -->
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbxxl6JEcsnOIok3keT0dykNEEn6D6xNNjL3aFLiklYK3r6jQUyWoiR6ERslhZ25T70p/exec";
-      const form = document.forms["portfolio-form-submit"];
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
